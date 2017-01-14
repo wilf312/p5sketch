@@ -7,27 +7,33 @@
 </head>
 <body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js" type="text/javascript" charset="UTF-8"></script>
+<h1>スケッチリスト</h1>
+<div id="app">
+    <ul>
+        <li v-for="(item, index) in urlList">
+            <span v-text="index"></span>
+            <a :href="item.url" v-text="item.url"></a>
+            <span v-text="item.updatedAt"></span>
+        </li>
+    </ul>
+</div>
+
+<script src="./libs/vue.2.1.8.min.js" type="text/javascript" charset="UTF-8"></script>
 <script>
-function setup() {
-    createCanvas(640, 480)
-}
 
-function draw() {
-  if (mouseIsPressed) {
-    fill(0)
-  } else {
-    fill(255)
-  }
-
-  if (mouseX === 0 &&
-      mouseY === 0) return
-
-
-  ellipse(mouseX, mouseY, 80, 80)
-}
-
-
+new Vue({
+    el: '#app',
+    data: function() {
+        return {
+            urlList: [
+                {
+                    url: 'mouse.html',
+                    updatedAt: '17-01-15 07:47:00',
+                },
+            ]
+        }
+    },
+})
 
 </script>
 </body>
