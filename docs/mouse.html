@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title></title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js" type="text/javascript" charset="UTF-8"></script>
+<script>
+function setup() {
+    createCanvas(window.innerWidth, window.innerHeight)
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    fill(0)
+  } else {
+    fill(255)
+  }
+
+  if (mouseX === 0 &&
+      mouseY === 0) return
+
+
+  ellipse(mouseX, mouseY, 80, 80)
+}
+
+
+
+</script>
+</body>
+</html>
