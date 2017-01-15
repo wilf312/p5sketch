@@ -12,7 +12,7 @@
     <ul>
         <li v-for="(item, index) in urlList">
             <span v-text="index"></span>
-            <a :href="item.url" v-text="(item.name || item.url)"></a>
+            <a :href="item.url" v-text="(item.name || item.url)" :target="(target || '_self')"></a>
             <span v-text="item.updatedAt"></span>
         </li>
     </ul>
@@ -39,11 +39,13 @@ new Vue({
                 {
                     url: 'http://p5codeschool.net/',
                     name: 'P5 Code School',
+                    target: '_blank',
                     updatedAt: '17-01-15 10:31:40',
                 },
                 {
                     url: 'https://p5js.org/tutorials/',
                     name: 'Introduction to p5.js',
+                    target: '_blank',
                     updatedAt: '17-01-15 10:31:40',
                 },
             ]
