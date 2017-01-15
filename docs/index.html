@@ -12,7 +12,7 @@
     <ul>
         <li v-for="(item, index) in urlList">
             <span v-text="index"></span>
-            <a :href="item.url" v-text="item.url"></a>
+            <a :href="item.url" v-text="(item.name || item.url)"></a>
             <span v-text="item.updatedAt"></span>
         </li>
     </ul>
@@ -28,6 +28,12 @@ new Vue({
             urlList: [
                 {
                     url: 'mouse.html',
+                    // name: 'mouse.html',
+                    updatedAt: '17-01-15 07:47:00',
+                },
+                {
+                    url: 'mouse.html',
+                    name: 'おれやで',
                     updatedAt: '17-01-15 07:47:00',
                 },
             ]

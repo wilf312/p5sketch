@@ -4,13 +4,21 @@
 <title></title>
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+body, html {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+}
+</style>
 </head>
 <body>
-
 <script src="./libs/p5.0.5.6.min.js" type="text/javascript" charset="UTF-8"></script>
 <script src="./libs/util.js" type="text/javascript" charset="UTF-8"></script>
 <script>
 var myCanvas
+var width = window.innerWidth
+var height = window.innerHeight
 
 
 function setup() {
@@ -21,22 +29,12 @@ function setup() {
 function draw() {
 
     var ran = new randomFunc()
-    if (mouseIsPressed) {
-        fill(ran.random2(255), ran.random2(255), ran.random2(255), ran.random2(255))
-    }
-    else {
-        fill(ran.random3(255), ran.random3(255), ran.random3(255), ran.random3(255))
-    }
 
-  // キャンバスの位置変更
-  // myCanvas.position(winMouseX+1, windowHeight/2)
-  // console.log('winMouseX', winMouseX, 'winMouseY', winMouseY)
-
-  if (mouseX === 0 &&
-      mouseY === 0) return
+    fill(ran.random(255, 1), ran.random(255, 1), ran.random(255, 1) )
+    noStroke()
 
 
-  ellipse(mouseX, mouseY, 80, 80)
+    ellipse(ran.random(width, 1), ran.random3(height), ran.random(50, 5), ran.random(50, 5))
 }
 
 
